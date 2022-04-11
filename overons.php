@@ -1,20 +1,4 @@
-<?php
 
-
-include("Account.php");
-
-session_start();
-
-$error = printError();
-
-if (isset($_POST['loginsubmit'])) {
-    $naam = $_POST['Username'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $email = $_POST['email'];
-    makeAccount($naam, $wachtwoord, $email);
-}
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,7 +15,7 @@ if (isset($_POST['loginsubmit'])) {
     <div class="images">
         <img src="images/output-onlinepngtools(1).png" width="200px" height="120px">
     </div>
-    <section class="stage">
+    <section class="responsive2">
 
         <div class="random">
             <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>

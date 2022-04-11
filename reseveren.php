@@ -14,7 +14,7 @@
     <div class="images">
         <img src="images/output-onlinepngtools(1).png" width="200px" height="120px">
     </div>
-    <section class="stage">
+    <section class="responsive2">
 
         <div class="random">
             <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
@@ -35,10 +35,14 @@
         <div class="random">
             <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
                 </div></a>
-            <div class="random1">
-                <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
-                </div>
+
+        </div>
+        <div class="random">
+            <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
             </div>
+        </div>
+
+</div>
 
 
             <div id="id01" class="modal">
@@ -72,23 +76,30 @@
                 </form>
             </div>
         </div>
+        <?php
 
+
+        if (isset($_POST['date'])) {
+            include "res-lib.php";
+//            $_RSV = new resevation();
+            echo $_RSV->save($_POST['date'], $_POST['name'], $_POST['email'])
+                ? "<div>OK</div>" : "<div>".$_RSV->error."</div>";
+        }
+        ?>
     </section><a target='_blank' href='https://www.javascriptfreecode.com/' style='font-size: 8pt; text-decoration: none'></a>
     <div class="hoofdcontainer2">
         <div class="displayflex1">
             <div class="witcontainer1">
-                <span class="contact1-form-title">Reseveer hier!</span>
-                <input class="input1" type="text" name="name" placeholder="Name">
-
-                <input class="input1" type="text" name="email" placeholder="Email">
-
-                <input class="input1" type="text" name="subject" placeholder="Subject">
-
-                <textarea class="input1" name="message" placeholder="Message"></textarea>
-
-                <button class="contact1-form-btn">
-                    <span>Send Email<i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></button>
-                <label>
+                <h1>Reseveer hier!</h1>
+                <div class="margintop">
+                <form method="post" target="_self">
+                    <input type="text" name="name" placeholder="Name" required/>
+                    <input type="email" name="email" placeholder="Email" required/>
+                    <input type="text" name="aantal" placeholder="Aantal" required/>
+                    <input type="date" name="date" placeholder="Date" required/>
+                    <button class="kleurbutton">Submit</button>
+                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -143,6 +154,7 @@
             </div>
 
         </div>
+
 
     </footer>
 

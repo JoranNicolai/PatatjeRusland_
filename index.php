@@ -1,20 +1,3 @@
-<?php
-
-
-include("Account.php");
-
-session_start();
-
-$error = printError();
-
-if (isset($_POST['loginsubmit'])) {
-    $naam = $_POST['Username'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $email = $_POST['email'];
-    makeAccount($naam, $wachtwoord, $email);
-}
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +15,7 @@ if (isset($_POST['loginsubmit'])) {
 <img src="images/output-onlinepngtools(1).png" width="200px" height="120px">
 </div>
 <section class="stage">
-
+    <div class="responsive1">
     <div class="random">
         <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
     </div>
@@ -52,44 +35,46 @@ if (isset($_POST['loginsubmit'])) {
     <div class="random">
         <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
     </div></a>
-        <div class="random1">
+    </div>
+        <div class="random">
              <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
             </div>
         </div>
 
+    </div>
 
-        <div id="id01" class="modal">
 
-            <form class="modal-content animate" action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="images/logo.png" alt="">
-                </div>
 
-                <div class="container1">
-                    <form action="pateje.php">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
 
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+    <div id="id01" class="modal">
 
-                    <label for="psw"><b>Email</b></label>
-                    <input type="email" placeholder="Enter Email" name="email" required>
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="images/logo.png" alt="">
+            </div>
 
-                    <button class="container100" type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-                    </form>
-                </div>
+            <div class="container1">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
 
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-            </form>
-        </div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
+
+                <button class="container100"  type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>x
     </div>
 
 </section><a target='_blank' href='https://www.javascriptfreecode.com/' style='font-size: 8pt; text-decoration: none'></a>
@@ -98,8 +83,8 @@ if (isset($_POST['loginsubmit'])) {
     <h1>Welcome to Patatje Oorlog</h1>
     <h8>Beste cafe van Nederland voor meer dan 10 jaar!</h8>
         <div class="orderbuttons">
-            <button class="button button1">ORDER MENU</button>
-            <button class="button button1">BOOK A TABLE</button>
+            <a href="menu.php"><button class="button button1">ORDER MENU</button></a>
+            <a href="reseveren.php"><button class="button button1">BOOK A TABLE</button></a>
         </div>
 </div>
 </div>

@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -79,18 +76,28 @@
                 </form>
             </div>
         </div>
+        <?php
+
+
+        if (isset($_POST['date'])) {
+            include "res-lib.php";
+//            $_RSV = new resevation();
+            echo $_RSV->save($_POST['date'], $_POST['name'], $_POST['email'])
+                ? "<div>OK</div>" : "<div>".$_RSV->error."</div>";
+        }
+        ?>
     </section><a target='_blank' href='https://www.javascriptfreecode.com/' style='font-size: 8pt; text-decoration: none'></a>
     <div class="hoofdcontainer2">
         <div class="displayflex1">
             <div class="witcontainer1">
                 <h1>Reseveer hier!</h1>
                 <div class="margintop">
-                <form action="includes/reserverenbackend.php" method="post" target="_self">
+                <form method="post" target="_self">
                     <input type="text" name="name" placeholder="Name" required/>
                     <input type="email" name="email" placeholder="Email" required/>
                     <input type="text" name="aantal" placeholder="Aantal" required/>
                     <input type="date" name="date" placeholder="Date" required/>
-                    <input class="kleurbutton" type="submit" name="submit" value="sumbit">
+                    <button class="kleurbutton">Submit</button>
                 </form>
                 </div>
             </div>

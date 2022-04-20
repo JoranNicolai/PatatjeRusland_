@@ -1,16 +1,13 @@
 <?php
 
-include("../includes/connect.php");
+include_once("../includes/connect.php");
 
-global $conn;
+$sql = "DELETE FROM producttb
+        WHERE id = :id";
 
-$id = $_GET['ID'];
+$stmt = $connect->prepare($sql);
+$stmt ->bindparam(":id", $_POST['id']);
+$stmt ->execute();
 
-echo $id;
-
-$sql = "DELETE FROM tbl_product WHERE id = :id";
-$stmt = $conn->prepare($sql);
-$stmt->bindParam(":id", $id );
-$stmt->execute();
-
-redirect("../admin/menubackend.php");
+header("Location: CRUD.php");
+?>

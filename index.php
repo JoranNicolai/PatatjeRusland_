@@ -33,7 +33,7 @@
             </div></a>
         </div>
     <div class="random">
-        <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
+        <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact ili</p>
     </div></a>
     </div>
         <div class="random">

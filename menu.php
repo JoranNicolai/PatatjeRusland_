@@ -83,8 +83,8 @@ if(isset($_GET["action"]))
                         </div></a>
                 </div>
                 <div class="random">
-                    <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">Login</p>
-                    </div>
+                    <a href="login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
+                        </div></a>
                 </div>
 
             </div>
@@ -242,7 +242,7 @@ if(isset($_GET["action"]))
 
 if (isset($_POST["sumbit"])){
     $str = $_POST["search"];
-    $sth = $con->prepare("SELECT * FROM `search` where name = '$str'");
+    $sth = $connect->prepare("SELECT * FROM `search` where name = '$str'");
 
     $sth->setFetchMode(PDO:: FETCH_OBJ);
     $sth -> execute();

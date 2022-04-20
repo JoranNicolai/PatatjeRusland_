@@ -38,44 +38,14 @@
 
         </div>
         <div class="random">
-            <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
-            </div>
+            <a href="login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
+                </div></a>
         </div>
 
 </div>
 
 
-            <div id="id01" class="modal">
 
-                <form class="modal-content animate" action="/action_page.php" method="post">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="images/logo.png" alt="">
-                    </div>
-
-                    <div class="container1">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-
-                        <label for="psw"><b>Email</b></label>
-                        <input type="email" placeholder="Enter Email" name="email" required>
-
-                        <button class="container100"  type="submit">Login</button>
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                        </label>
-                    </div>
-
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
-                    </div>
-                </form>
-            </div>
-        </div>
         <?php
 
 

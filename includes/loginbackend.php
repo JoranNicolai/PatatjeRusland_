@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         $result->execute();
         if ($result->rowCount() == 1) {
             echo "hoi";
-            redirect("../admin/homebackend.php");
+            redirect("../admin/menubackend.php");
         } else {
             echo "error";
             redirect("../index.php");

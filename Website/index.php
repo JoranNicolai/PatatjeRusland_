@@ -6,13 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 
 </head>
 <body>
 <div class="containerfixed">
 <div class="images">
-<img src="images/output-onlinepngtools(1).png" width="200px" height="120px">
+<img src="../images/output-onlinepngtools(1).png" width="200px" height="120px">
 </div>
 <section class="stage">
     <div class="responsive1">
@@ -20,7 +20,7 @@
         <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
     </div>
     <div class="random">
-        <a href="menu.php"><div class="div" id="about"><p class="p">Menu Kaart</p>
+        <a href="../menu.php"><div class="div" id="about"><p class="p">Menu Kaart</p>
         </div></a>
     </div>
 
@@ -37,7 +37,7 @@
     </div></a>
     </div>
         <div class="random">
-            <a href="login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
+            <a href="../login/login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
             </div></a>
         </div>
 
@@ -50,7 +50,7 @@
     <h1>Welcome to Patatje Oorlog</h1>
     <h8>Beste cafe van Nederland voor meer dan 10 jaar!</h8>
         <div class="orderbuttons">
-            <a href="menu.php"><button class="button button1">ORDER MENU</button></a>
+            <a href="../menu.php"><button class="button button1">ORDER MENU</button></a>
             <a href="reseveren.php"><button class="button button1">BOOK A TABLE</button></a>
         </div>
 </div>
@@ -64,7 +64,7 @@
 
         <p class="footer-links">
             <a href="index.php">Home</a> ·
-            <a href="menu.php">Menu kaart</a> ·
+            <a href="../menu.php">Menu kaart</a> ·
             <a href="reseveren.php">Reseveren</a> ·
             <a href="contact.php">Contact</a>
         </p>
@@ -112,6 +112,6 @@
 
 
 
-    <script src="JS/main.js"></script>
+    <script src="../JS/main.js"></script>
 </body>
 </html>

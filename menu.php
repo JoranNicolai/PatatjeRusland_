@@ -63,7 +63,7 @@ if(isset($_GET["action"]))
         <section class="stage">
             <div class="responsive1">
                 <div class="random">
-                    <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
+                    <a href="Website/index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
                 </div>
                 <div class="random">
                     <a href="menu.php"><div class="div" id="about"><p class="p">Menu Kaart</p>
@@ -71,19 +71,19 @@ if(isset($_GET["action"]))
                 </div>
 
                 <div class="random">
-                    <a href="reseveren.php"><div class="div" id="reseveren"><p class="p">Reseveren</p>
+                    <a href="Website/reseveren.php"><div class="div" id="reseveren"><p class="p">Reseveren</p>
                         </div></a>
                 </div>
                 <div class="random">
-                    <a href="overons.php"><div class="div" id="gallery"><p class="p">Over ons</p>
+                    <a href="Website/overons.php"><div class="div" id="gallery"><p class="p">Over ons</p>
                         </div></a>
                 </div>
                 <div class="random">
-                    <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
+                    <a href="Website/contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
                         </div></a>
                 </div>
                 <div class="random">
-                    <a href="login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
+                    <a href="login/login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
                         </div></a>
                 </div>
 
@@ -131,10 +131,15 @@ if(isset($_GET["action"]))
     </head>
 
     <body>
-    <div class="search-container">
-        <input type="text" name="search" placeholder="Search..." class="search-input">
+    <div class="search-container1">
+        <form action="search.php" method="POST">
+        <input type="text" name="zoekbalk" placeholder="Search..." class="search-input1">
+
+            <input type="submit" name="submit">
+<!--            <input type="submit" name="submit">-->
+        </form>
     </div>
-        <a href="search.php"<i class="fas fa-search"></i></a>
+
 
     </body>
     </div>
@@ -234,7 +239,7 @@ if(isset($_GET["action"]))
     </div>
     <br />
     <div class="buttonbestel">
-        <a href="versturen.php"><button>Maak bestelling</button></a>
+        <a href="Website/versturen.php"><button>Maak bestelling</button></a>
     </div>
     </body>
     </html>

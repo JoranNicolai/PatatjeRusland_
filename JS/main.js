@@ -1,13 +1,26 @@
-const div = document.querySelector("#info");
+ let slideIndex = 1;
+    showSlides(slideIndex);
 
-fetch("https://pokeapi.co/api/v2/berry/")
-    .then((response) => {
-        return response.json();
-    })
-    .then((berrys) => {
-        console.log(berrys)
-        berrys.results.forEach((berry) => {
-            div.innerHTML += "<div>"+ berry["name"] +"</div>"
-        })
-    })
-    .catch((e) => console.log(e));
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }

@@ -6,13 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 
 </head>
 <body>
 <div class="containerfixed">
     <div class="images">
-        <img src="images/output-onlinepngtools(1).png" width="200px" height="120px">
+        <img src="../images/output-onlinepngtools(1).png" width="200px" height="120px">
     </div>
     <section class="responsive2">
 
@@ -20,7 +20,7 @@
             <a href="index.php"><div id="home" class="div"><p id="homep" class="p">Home</p></div></a>
         </div>
         <div class="random">
-            <a href="menu.php"><div class="div" id="about"><p class="p">Menu Kaart</p>
+            <a href="../menu.php"><div class="div" id="about"><p class="p">Menu Kaart</p>
                 </div></a>
         </div>
 
@@ -35,9 +35,10 @@
         <div class="random">
             <a href="contact.php"><div class="div" id="resevation"><p class="p">Contact</p>
                 </div></a>
+
         </div>
         <div class="random">
-            <a href="login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
+            <a href="../login/login.php"> <div class="div2" onclick="document.getElementById('id01').style.display='block'" id="resevation"><p class="p">login</p>
                 </div></a>
         </div>
 
@@ -45,26 +46,35 @@
 
 
 
+        <?php
 
+
+        if (isset($_POST['date'])) {
+            include "res-lib.php";
+//            $_RSV = new resevation();
+            echo $_RSV->save($_POST['date'], $_POST['name'], $_POST['email'])
+                ? "<div>OK</div>" : "<div>".$_RSV->error."</div>";
+        }
+        ?>
     </section><a target='_blank' href='https://www.javascriptfreecode.com/' style='font-size: 8pt; text-decoration: none'></a>
-<div class="hoofdcontainer2">
-    <div class="displayflex1">
-        <div class="witcontainer1">
-            <h1>Klachten of vragen? stuur ons gerust een mail!</h1>
-            <div class="margintop">
+    <div class="hoofdcontainer2">
+        <div class="displayflex1">
+            <div class="witcontainer1">
+                <h1>Reseveer hier!</h1>
+                <div class="margintop">
                 <form method="post" target="_self">
                     <input type="text" name="name" placeholder="Name" required/>
                     <input type="email" name="email" placeholder="Email" required/>
-                    <textarea class="input1" name="message" placeholder="Message"></textarea>
+                    <input type="text" name="aantal" placeholder="Aantal" required/>
+                    <input type="date" name="date" placeholder="Date" required/>
                     <button class="kleurbutton">Submit</button>
                 </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<footer class="footer-distributed">
+    <footer class="footer-distributed">
 
         <div class="footer-left">
 
@@ -72,7 +82,7 @@
 
             <p class="footer-links">
                 <a href="index.php">Home</a> ·
-                <a href="menu.php">Menu kaart</a> ·
+                <a href="../menu.php">Menu kaart</a> ·
                 <a href="reseveren.php">Reseveren</a> ·
                 <a href="contact.php">Contact</a>
             </p>
@@ -115,8 +125,9 @@
 
         </div>
 
+
     </footer>
 
-    <script src="JS/main.js"></script>
+    <script src="../JS/main.js"></script>
 </body>
 </html>
